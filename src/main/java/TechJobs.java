@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -119,7 +116,22 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+//        iterate over an ArrayList of jobs, each job is itself a HashMap - create a
+//        a nested loop to loop over each HashMap in the ArrayList
+//        for (int k = 0; k < someJobs.size(); k++) {
+////            k represents a hashmap within an arrayList - how do I get in to the hashmap?
+//            for (Map.Entry<String, HashMap> entry : someJobs.entrySet(k)) {
+////            System.out.println(someJobs);
+//                System.out.println("*****\n" + entry.getKey() + ": " + entry.getValue() + "\n*****\n\n");
+//            }
+//        }
+        for (int k = 0; k < someJobs.size(); k++) {
+            for (Map<String, String> job : someJobs) {
+                Set<Map.Entry<String, String>> entrySet = job.entrySet();
+                for (Map.Entry<String, String> entry : entrySet) {
+                    System.out.println("*****\n" + entry.getKey() + ": " + entry.getValue() + "\n*****\n\n");
+                }
+            }
+        }
     }
 }
