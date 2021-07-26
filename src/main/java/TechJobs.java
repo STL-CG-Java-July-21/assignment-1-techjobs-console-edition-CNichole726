@@ -123,12 +123,15 @@ public class TechJobs {
 //                    System.out.println(entry.getKey() + ": " + entry.getValue());
 ////                    System.out.println("*****\n");
 //                }
-//            Collection<String> allValues = job.values();
-
+//          TODO: how do I access the searchTerm to check if there are results? what else could I
+//            use to access the user input? then check against the values of job hashmaps
+            String searchTerm = in.nextLine();
             if (job.containsValue(searchTerm)) {
                 System.out.println("\n*****");
                 job.forEach((k, v) -> System.out.println(k + ": " + v));
                 System.out.println("*****");
+                System.out.println("searchTerm: " + searchTerm);
+
             } else {
                 System.out.println("No Results");
             }
