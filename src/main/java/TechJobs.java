@@ -7,7 +7,7 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -109,29 +109,30 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-//        iterate over an ArrayList of jobs, each job is itself a HashMap - create a
-//        a nested loop to loop over each HashMap in the ArrayList
-//        for (int k = 0; k < someJobs.size(); k++) {
-////            k represents a hashmap within an arrayList - how do I get in to the hashmap?
-//            for (Map.Entry<String, HashMap> entry : someJobs.entrySet(k)) {
-////            System.out.println(someJobs);
-//                System.out.println("*****\n" + entry.getKey() + ": " + entry.getValue() + "\n*****\n\n");
-//            }
-//        }
-        for (int k = 0; k < someJobs.size(); k++) {
-            for (Map<String, String> job : someJobs) {
-                Set<Map.Entry<String, String>> entrySet = job.entrySet();
-                for (Map.Entry<String, String> entry : entrySet) {
-                    System.out.println("*****\n" + entry.getKey() + ": " + entry.getValue() + "\n*****\n\n");
-                }
+        for (HashMap<String, String> job : someJobs) {
+//                for (Map.Entry<String, String> entry : job.entrySet()) {
+////                    for (int k = 0; k < job.entrySet().size(); k++) {
+//                    System.out.println("*****");
+//                    System.out.println(entry.getKey() + ": " + entry.getValue());
+////                    System.out.println("*****\n");
+//                }
+//            Collection<String> allValues = job.values();
+
+            if (job.containsValue(searchTerm)) {
+                System.out.println("\n*****");
+                job.forEach((k, v) -> System.out.println(k + ": " + v));
+                System.out.println("*****");
+            } else {
+                System.out.println("No Results");
             }
         }
     }
 }
+
