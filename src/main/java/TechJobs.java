@@ -117,25 +117,12 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         for (HashMap<String, String> job : someJobs) {
-//                for (Map.Entry<String, String> entry : job.entrySet()) {
-////                    for (int k = 0; k < job.entrySet().size(); k++) {
-//                    System.out.println("*****");
-//                    System.out.println(entry.getKey() + ": " + entry.getValue());
-////                    System.out.println("*****\n");
-//                }
-//          TODO: how do I access the searchTerm to check if there are results? what else could I
-//            use to access the user input? then check against the values of job hashmaps
-            String searchTerm = in.nextLine();
-            if (job.containsValue(searchTerm)) {
                 System.out.println("\n*****");
-                job.forEach((k, v) -> System.out.println(k + ": " + v));
-                System.out.println("*****");
-                System.out.println("searchTerm: " + searchTerm);
-
-            } else {
-                System.out.println("No Results");
+            for (Map.Entry<String, String> entry : job.entrySet()) {
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+            System.out.println("*****");
             }
         }
     }
-}
 
