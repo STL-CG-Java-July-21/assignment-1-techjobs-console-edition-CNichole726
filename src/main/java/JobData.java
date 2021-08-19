@@ -95,7 +95,12 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        // TODO - implement this method
+        // TODO - implement this method - *** no idea if anything below is correct
+        // should not contain duplicate jobs
+        // utilize loops and collection methods
+        // isn't it already called on line 62 of main?
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
         for (HashMap<String, String> job : allJobs) {
             if (job.containsValue(value)) {
                 System.out.println("\n*****");
@@ -104,8 +109,9 @@ public class JobData {
                 }
                 System.out.println("*****");
             }
-            return null;
         }
+        return jobs;
+    }
 
         /**
          * Read in data from a CSV file and store it in a list
@@ -148,4 +154,4 @@ public class JobData {
             }
         }
     }
-}
+

@@ -114,7 +114,7 @@ public class TechJobs {
         return choiceKeys[choiceIdx];
     }
 
-    // Print a list of jobs
+    // TODO: Needs to return "No Results" if none are found
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         for (HashMap<String, String> job : someJobs) {
                 System.out.println("\n*****");
