@@ -102,21 +102,17 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> job : allJobs) {
-
-            for (Map.Entry<String, String> entry : job.entrySet()) {
-
-                if (!job.containsValue(value)) {
+//            for (Map.Entry<String, String> entry : job.entrySet()) {
+                if (job.containsValue(value)) {
                     jobs.add(job);
                 }
-//                System.out.println("\n*****");
-//                for (Map.Entry<String, String> entry : job.entrySet()) {
-//                    System.out.println(entry.getKey() + ": " + entry.getValue());
+//                } else if (jobs.contains(entry)){
+//                    jobs.remove(entry);
 //                }
-//                System.out.println("*****");
-
             }
-            return jobs;
-        }
+//        }
+        return jobs;
+    }
 
         /**
          * Read in data from a CSV file and store it in a list
@@ -159,4 +155,4 @@ public class JobData {
             }
         }
     }
-}
+
