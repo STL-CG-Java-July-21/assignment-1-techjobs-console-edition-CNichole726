@@ -95,22 +95,16 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        // TODO - implement this method - *** no idea if anything below is correct
-        // should not contain duplicate jobs
-        // utilize loops and collection methods
-        // isn't it already called on line 62 of main?
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> job : allJobs) {
-//            for (Map.Entry<String, String> entry : job.entrySet()) {
-                if (job.containsValue(value)) {
+            for (Map.Entry<String, String> entry : job.entrySet()) {
+
+                if (entry.getValue().toLowerCase().contains(value.toLowerCase())) {
                     jobs.add(job);
                 }
-//                } else if (jobs.contains(entry)){
-//                    jobs.remove(entry);
-//                }
             }
-//        }
+        }
         return jobs;
     }
 
